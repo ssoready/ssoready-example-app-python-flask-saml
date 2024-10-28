@@ -76,23 +76,21 @@ GET http://localhost:5293/ssoready-callback?saml_access_code=saml_access_code_..
 
 Here's how the demo app handles those requests:
 
-```csharp
-app.MapGet("/ssoready-callback", async (HttpContext context, [FromQuery(Name = "saml_access_code")] string samlAccessCode) =>
-{
-    var redeemResponse = await ssoready.Saml.RedeemSamlAccessCodeAsync(new RedeemSamlAccessCodeRequest
-    {
-        SamlAccessCode = samlAccessCode
-    });
+```python
+@app.route("/ssoready-callback")
+def ssoready_callback():
+    email = ssoready.saml.redeem_saml_access_code(
+        saml_access_code=request.args["saml_access_code"]
+    ).email
 
-    context.Session.SetString("email", redeemResponse.Email!);
-    return Results.Redirect("/");
-});
+    session["email"] = email
+    return redirect("/")
 ```
 
 You handle a SAML login by calling
-[`Saml.RedeemSamlAccessCodeAsync`](https://ssoready.com/docs/api-reference/saml/redeem-saml-access-code)
+[`saml.redeem_saml_access_code`](https://ssoready.com/docs/api-reference/saml/redeem-saml-access-code)
 with the `saml_access_code` query parameter value, and logging the user in from
-the `Email` SSOReady returns to you.
+the `email` SSOReady returns to you.
 
 And that's it! That's all the code you have to write to add SAML support to your
 application.
