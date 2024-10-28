@@ -1,10 +1,10 @@
-# SSOReady Example App: C# ASP.NET Core with SAML
+![](https://i.imgur.com/oaig6Au.gif)
 
-This repo contains a minimal example app built with Python and
-[Flask](https://flask.palletsprojects.com/en/2.3.x/) that supports
-[SAML](https://ssoready.com/docs/saml/saml-quickstart) using
-[SSOReady](https://ssoready.com/), an
-[open-source](https://github.com/ssoready/ssoready) way to add SAML and SCIM
+# SSOReady Example App: Python + Flask with SAML
+
+This repo contains a minimal example app built with Python and Flask that
+supports [SAML](https://ssoready.com/docs/saml/saml-quickstart) using
+[SSOReady](https://ssoready.com/), an open-source way to add SAML and SCIM
 support to your product.
 
 ## Running it yourself
@@ -26,6 +26,8 @@ flask run
 Then, visit http://127.0.0.1:5000.
 
 ## How it works
+
+![](https://i.imgur.com/DkcXB4F.png)
 
 There are two steps involved in implementing SAML:
 
