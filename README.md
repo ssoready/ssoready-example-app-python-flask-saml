@@ -9,7 +9,7 @@ support to your product.
 
 ## Running it yourself
 
-To check out this repo yourself, you'll need a working installation of `dotnet`.
+To check out this repo yourself, you'll need a working installation of Python.
 Then, run:
 
 ```
