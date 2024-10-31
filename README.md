@@ -69,11 +69,11 @@ ID](https://ssoready.com/docs/ssoready-concepts/organizations#organization-exter
 
 After your user finishes authenticating over SAML, SSOReady will redirect them
 back to your application. In this demo app, that callback URL is configured to
-be `http://localhost:5293/ssoready-callback`, so you'll get requests that look
+be `http://localhost:5000/ssoready-callback`, so you'll get requests that look
 like this:
 
 ```
-GET http://localhost:5293/ssoready-callback?saml_access_code=saml_access_code_...
+GET http://localhost:5000/ssoready-callback?saml_access_code=saml_access_code_...
 ```
 
 Here's how the demo app handles those requests:
@@ -109,7 +109,7 @@ The steps we took were:
    [environment](https://ssoready.com/docs/ssoready-concepts/environments), and
    configured its [redirect
    URL](https://ssoready.com/docs/ssoready-concepts/environments#redirect-url)
-   to be `http://localhost:5293/ssoready-callback`.
+   to be `http://localhost:5000/ssoready-callback`.
 3. We created an [API
    key](https://ssoready.com/docs/ssoready-concepts/environments#api-keys).
    Because this is a demo app, we hard-coded the API key. In production apps,
