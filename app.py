@@ -94,7 +94,7 @@ def saml_redirect():
 
     # `saml.get_saml_redirect_url` returns an object like this:
     #
-    # GetSamlRedirectUrlResponse(redirect_url="https:#...")
+    # GetSamlRedirectUrlResponse(redirect_url="https://...")
     #
     # To initiate a SAML login, you redirect the user to that redirect_url.
     return redirect(redirect_url)
